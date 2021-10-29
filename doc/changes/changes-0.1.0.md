@@ -1,4 +1,4 @@
-# script-languages-release 1.0.0, released 2020-11-07
+# error-reporting-cpp 0.1.0, released 2020-11-07
  
 ## Summary
 This release introduces a dedicated standard flavor for Exasol 6.2 and adds the python package simplejson to the all standard-flavors. Additionally, it updates some packages in the standard flavors and fixes some bugs. Furthermore, we introduce with this release semantic versioning. We start the semantic versioning with version 1.0.0, because this project underwent its initial development under the old versioning scheme and should have now a somewhat stable interface.
