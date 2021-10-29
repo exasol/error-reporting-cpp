@@ -1,4 +1,4 @@
-# Java Error Reporting
+# C++ Error Reporting
 
 [![Build Status](https://github.com/exasol/error-reporting-cpp/actions/workflows/main.yml/badge.svg)](https://github.com/exasol/error-reporting-cpp)
 [![codecov.io](https://codecov.io/github/exasol/error-reporting-cpp/coverage.svg?branch=main)](https://codecov.io/github/exasol/error-reporting-cpp?branch=main)
