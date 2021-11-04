@@ -1,0 +1,10 @@
+
+#ifndef ERROR_REPORTING_CPP_ERROR_MESSAGE_H
+#define ERROR_REPORTING_CPP_ERROR_MESSAGE_H
+
+namespace ErrorReporting {
+
+
+}
+
+#endif //ERROR_REPORTING_CPP_ERROR_MESSAGE_H
