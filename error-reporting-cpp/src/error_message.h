@@ -2,6 +2,10 @@
 #ifndef ERROR_REPORTING_CPP_ERROR_MESSAGE_H
 #define ERROR_REPORTING_CPP_ERROR_MESSAGE_H
 
+#include <regex>
+#include <sstream>
+#include <utility>
+
 namespace error_reporting {
 
     struct error_message_declaration_internal {
@@ -79,7 +83,8 @@ namespace error_reporting {
             nr_error_mitigations(_error_mitigations.size()),
             error_mitigations(_error_mitigations.begin()),
             nr_parameters(_nr_parameters),
-            parameters(_parameters) {
+            parameters(_parameters),
+            next(nullptr) {
         g_error_message_container.register_error_message(this);
     }
 
@@ -100,34 +105,33 @@ namespace error_reporting {
     template<int COUNTER>
     class ErrorBuilder {
     public:
-        explicit ErrorBuilder(const error_message_declaration_internal& _src) : src(_src) {
-            m_builder << "[" << src.error_code << "] - " << src.error_message << ": (";
+        explicit ErrorBuilder(const error_message_declaration_internal& _src)  {
+            std::ostringstream os;
+            os << "[" << _src.error_code << "] : " << _src.error_message;
+            message = os.str();
         };
 
-        explicit ErrorBuilder(const error_message_declaration_internal& _src, const std::string && str)
-        : src(_src) {
-            m_builder << str;
-        };
+        explicit ErrorBuilder(std::string  str)
+        : message(std::move(str)) {};
 
         template<typename T>
-        ErrorBuilder<COUNTER - 1> param( const T & param ) && {
+        ErrorBuilder<COUNTER - 1> param( const std::string key, const T & param ) && {
             static_assert(COUNTER > 0);
-            m_builder << param;
-            if (COUNTER > 1) {
-                m_builder << ",";
-            }
-            return ErrorBuilder<COUNTER - 1>(src, m_builder.str());
+            std::ostringstream os;
+            os << param;
+            const std::string key_str = std::string("\\{\\{") + key + "\\}\\}";
+            const std::string new_message =
+                    std::regex_replace(message, std::regex(key_str), os.str());
+            return ErrorBuilder<COUNTER - 1>(new_message);
         }
 
         //Implicit cast from error builder to string, but only when building is complete
         typename std::conditional<0 == COUNTER, std::string, void>::type str() {
-            m_builder << ")";
-            return m_builder.str();
+            return message;
         }
 
     private:
-        std::ostringstream m_builder;
-        const error_message_declaration_internal& src;
+        std::string message;
     };
 
     template<size_t N_PARAM>
@@ -136,9 +140,9 @@ namespace error_reporting {
                 const char* _error_code,
                 const char* _error_message,
                 std::initializer_list<const char*> _error_mitigations,
-                std::initializer_list<const char*> _parameters) :
+                const char ** _parameters) :
                 error_message_declaration_internal( _error_code, _error_message, _error_mitigations,
-                                                    _parameters.size(), _parameters.begin()){}
+                                                    N_PARAM, _parameters){}
 
         ErrorBuilder<N_PARAM> build() {
             return ErrorBuilder<N_PARAM>(*this);
@@ -146,10 +150,13 @@ namespace error_reporting {
     };
 }
 
-#define DECLARE_ERR_MSG(EC, EM, MITIGATIONS) error_message_declaration g_##EC(#EC, EM, MITIGATIONS)
+#define DECLARE_ERR_MSG(EC, EM, MITIGATIONS) error_message_declaration EC(#EC, EM, MITIGATIONS)
+#define PARAMS(...) { __VA_ARGS__ }
 #define DECLARE_ERR_MSG_PARAMS(EC, EM, MITIGATIONS, PARAMS) \
-                                                            \
-error_message_declaration_with_param<> g_##EC(#EC, EM, MITIGATIONS, PARAMS)
+namespace error_reporting { namespace EC##_params {          \
+const char* g##EC_PARAMS[] = PARAMS;                        \
+} }                                                         \
+error_message_declaration_with_param<sizeof(error_reporting::EC##_params::g##EC_PARAMS) / sizeof(const char*)> EC(#EC, EM, MITIGATIONS, error_reporting::EC##_params::g##EC_PARAMS)
 
 
 #endif //ERROR_REPORTING_CPP_ERROR_MESSAGE_H
