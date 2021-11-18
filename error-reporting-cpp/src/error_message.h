@@ -152,12 +152,15 @@ namespace error_reporting {
 
 #define DECLARE_ERR_MSG(EC, EM, MITIGATIONS) error_message_declaration EC(#EC, EM, MITIGATIONS)
 #define PARAMS(...) { __VA_ARGS__ }
+#define MITIGATIONS(...) { __VA_ARGS__ }
 #define DECLARE_ERR_MSG_PARAMS(EC, EM, MITIGATIONS, PARAMS) \
 namespace error_reporting { namespace EC##_params {          \
 const char* g##EC_PARAMS[] = PARAMS;                        \
 } }                                                         \
 error_message_declaration_with_param<sizeof(error_reporting::EC##_params::g##EC_PARAMS) / sizeof(const char*)> EC(#EC, EM, MITIGATIONS, error_reporting::EC##_params::g##EC_PARAMS)
 
+#define EXTERN_ERR_MSGS(EC) extern error_message_declaration_with_param<NUM_PARAM> EC
+#define EXTERN_ERR_MSG_PARAMS(EC, NUM_PARAM) extern error_message_declaration EC
 
 #endif //ERROR_REPORTING_CPP_ERROR_MESSAGE_H
 
