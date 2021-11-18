@@ -140,6 +140,7 @@ struct EC_DB_2_class {
 //Instantiation of global variable!!!
 error_reporting::EC_DB_2_class EC_DB_2;
 ```
+The complete class definition can be based on the [following approach](https://stackoverflow.com/a/37391721) to implement the consistency (It basically definces an enum for each parameter, and creates a new type for each invocation of the setter).
 
 #### Usage
 ```c++
