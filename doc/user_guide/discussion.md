@@ -4,7 +4,7 @@ During the exploration of possible implementation the following assumptions/requ
 2. Because of point 1, collection the error message information must not cause any heap allocations
 3. Because of point 1, the error message declaration and instantiation will occur on 2 different places in the code: Consistency checks must be implemented to verify correct instantiation of an error message (Parameter match!) 
 
-##Proposal 1 - Declare a global variable
+## Proposal 1 - Declare a global variable
 
 ### Summary
 
@@ -86,7 +86,7 @@ The consistency check only checks the number of parameters at compile time (link
 Changing the parameter names at the declaration, will cause an inconsistency during instantiation, which only will be detected whenever the error occurs.
 
 
-##Proposal 2 - Declare a a class and a global variable
+## Proposal 2 - Declare a a class and a global variable
 
 ### Summary
 
@@ -162,7 +162,7 @@ As this approach declares new classes, it's not possible to declare an error cod
 
 
 
-##Error catalog creation
+## Error catalog creation
 
 In both approaches, the global variable ```g_error_message_container``` can be used to collect all available error codes:
 ```c++
