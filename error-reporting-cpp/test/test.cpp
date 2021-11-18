@@ -9,7 +9,7 @@
 using namespace error_reporting;
 
 
-DECLARE_ERR_MSG(EC_DB_1, "Out of memory", {"Buy more RAM"});
+DECLARE_ERR_MSG(EC_DB_1, "Out of memory", MITIGATIONS("Buy more RAM"));
 
 
 DECLARE_ERR_MSG_PARAMS(EC_DB_2, "hd error {{Dummy1}} , {{Dummy2}}",
