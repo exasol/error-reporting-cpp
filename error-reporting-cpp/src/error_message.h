@@ -34,10 +34,8 @@ namespace error_reporting {
             if (nullptr == root) {
                 root = msg;
             } else {
-                while (n->next != nullptr) {
-                    n = n->next;
-                }
-                n->next = msg;
+                msg->next = root;
+                root = msg;
             }
         }
 
