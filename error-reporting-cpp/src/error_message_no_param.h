@@ -13,7 +13,7 @@ EC##_class() :                                                                  
 error_message_declaration_internal(error_code_str, message_str, mitigations_str, 0, nullptr){}      \
                                                                                                     \
 std::string str() {                                                                                 \
-    std::string msg = std::string(#EC) + ": " + std::string(message_str);                           \
+    std::string msg = std::string(error_code_str) + ": " + std::string(message_str);                 \
     if (!mitigations_str.empty()) {                                                                 \
         msg.append(" ");                                                                            \
         msg.append(mitigations_str);                                                                \

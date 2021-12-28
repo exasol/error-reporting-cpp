@@ -115,7 +115,7 @@ MITIG;                                                                          
 constexpr static const char * const gEC_PARAMS[] = {PARAM_DESCR_FUNCTION(__VA_ARGS__)};             \
 constexpr static size_t num_parameter = sizeof(gEC_PARAMS) / sizeof(const char*);                   \
 EC##_class() :                                                                                      \
-error_message_declaration_internal(#EC, message_str, mitigations_str, num_parameter, gEC_PARAMS){   \
+error_message_declaration_internal(error_code_str, message_str, mitigations_str, num_parameter, gEC_PARAMS){   \
 PARAM_CHECKER_FUNCTIONS(message_str, mitigations_str, __VA_ARGS__);                                 \
 }                                                                                                   \
                                                                                                     \

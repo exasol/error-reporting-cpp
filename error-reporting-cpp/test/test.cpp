@@ -1,6 +1,6 @@
 
-#define MAIN_ERROR_REPORTING_CPP
-#include "error-reporting-cpp/src/error_message.h"
+//Note that we do not Declare the main constant here -> The global objects are declared in another .o file
+#include "test_error_messages.h"
 
 #include "include/gtest/gtest.h"
 #include <string>
@@ -9,26 +9,34 @@
 using namespace error_reporting;
 
 
-DECLARE_ERR_MSG(EC_DB_1, "Out of memory.", MITIGATIONS("Buy more RAM"));
-
-
-DECLARE_ERR_MSG_PARAMS(EC_DB_2, "hd error {{Dummy1}} , {{Dummy2}}.",
-                       MITIGATIONS("Replace {{Dummy1}}"), PARAM("Description for Dummy1", Dummy1), PARAM("Description for Dummy2", Dummy2));
 
 TEST(ErrorMessage, BasicErrorMessage){
     const std::string res = g_error_message_container.collect_error_messages_as_json();
 
-
-    EXPECT_EQ("[{ \"code\": \"\" ,  \"message\": \"hd error {{Dummy1}} , {{Dummy2}}.\", "
-              "\"parameters\" : [\"Description for Dummy1\",\"Description for Dummy2\",], "
-              "\"mitigations\" : \"Replace {{Dummy1}}\"},"
-              "{ \"code\": \"EC_DB_1\" ,  \"message\": \"Out of memory.\", "
-              "\"parameters\" : [], \"mitigations\" : \"Buy more RAM\"},]", res);
+    const std::string expected =
+#ifdef ERROR_MESSAGE_COLLECTION
+        "[{ \"code\": \"EC_DB_3\" ,  \"message\": \"Kernel panic\", "
+        "\"parameters\" : [], \"mitigations\" : \"\"},"
+        "{ \"code\": \"EC_DB_2\" ,  \"message\": \"hd error {{Dummy1}} , {{Dummy2}}.\", "
+        "\"parameters\" : [\"Description for Dummy1\",\"Description for Dummy2\",], "
+        "\"mitigations\" : \"Replace {{Dummy1}}\"},"
+        "{ \"code\": \"EC_DB_1\" ,  \"message\": \"Out of memory.\", "
+        "\"parameters\" : [], \"mitigations\" : \"Buy more RAM\"},]";
+#else
+        "[]";
+#endif
+    EXPECT_EQ(expected, res);
 }
 
 TEST(ErrorMessage, BuildSimpleErrorMessage){
     const std::string res = EC_DB_1.str();
     EXPECT_EQ("EC_DB_1: Out of memory. Buy more RAM", res);
+}
+
+
+TEST(ErrorMessage, BuildSimpleErrorMessageNoMitigation){
+    const std::string res = EC_DB_3.str();
+    EXPECT_EQ("EC_DB_3: Kernel panic", res);
 }
 
 TEST(ErrorMessage, BuildParametrizedErrorMessage){

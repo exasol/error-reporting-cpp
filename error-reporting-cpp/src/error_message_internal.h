@@ -76,7 +76,9 @@ namespace error_reporting {
             nr_parameters(_nr_parameters),
             parameters(_parameters),
             next(nullptr) {
+#ifdef ERROR_MESSAGE_COLLECTION
         g_error_message_container.register_error_message(this);
+#endif
     }
 }
 
@@ -100,7 +102,7 @@ static constexpr std::string_view  mitigations_str = (x);
 static constexpr std::string_view  mitigations_str = "";
 
 
-#ifdef CREATE_ERROR_MESSAGE_INSTANCES
+#ifdef MAIN_ERROR_REPORTING_CPP
 #define ERROR_MESSAGE_CLASS_INSTANCE_MODIFIER
 #else
 #define ERROR_MESSAGE_CLASS_INSTANCE_MODIFIER extern
