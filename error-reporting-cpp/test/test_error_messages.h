@@ -12,4 +12,8 @@ DECLARE_ERR_MSG_PARAMS(EC_DB_2, "hd error {{Dummy1}} , {{Dummy2}}.",
 
 
 DECLARE_ERR_MSG(EC_DB_3, "Kernel panic", MITIGATIONS());
+
+
 #endif //ERROR_REPORTING_CPP_TEST_ERROR_MESSAGES_H
+
+

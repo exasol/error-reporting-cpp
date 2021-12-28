@@ -41,5 +41,5 @@ TEST(ErrorMessage, BuildSimpleErrorMessageNoMitigation){
 
 TEST(ErrorMessage, BuildParametrizedErrorMessage){
     const std::string res = EC_DB_2.build().setDummy1("/dev/sda1").setDummy2(100).str();
-    EXPECT_EQ("EC_DB_2: hd error /dev/sda1 , 100. Replace /dev/sda1", res);
+    EXPECT_EQ("EC_DB_2: hd error '/dev/sda1' , '100'. Replace '/dev/sda1'", res);
 }

@@ -20,7 +20,7 @@ namespace error_reporting {
     template<typename T>
     inline std::string replace_error_parameter(const std::string message, const std::string parameter_name, T value) {
         std::ostringstream os;
-        os << value;
+        os << "'" << value << "'";
         const std::string key_str = std::string("\\{\\{") + parameter_name + "\\}\\}";
         const std::string new_message =
                 std::regex_replace(message, std::regex(key_str), os.str());
