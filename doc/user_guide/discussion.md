@@ -113,7 +113,7 @@ _Same as proposal 1_
 #### Declaration
 ```c++
 DECLARE_ERR_MSG_PARAMS(EC_DB_2, "hd error {{Dummy1}} , {{Dummy2}}",
-                       MITIGATIONS("Buy new disk"),PARAMS("Description for Dummy1", "Description for Dummy2"));
+                       MITIGATIONS("Buy new disk"),PARAMS(Dummy1, Dummy2), PARAMS_DESCRIPTION("Description for Dummy1", "Description for Dummy2"));
 ```
 This marco expands to the following (*incomplete*) code snippet:
 ```c++
