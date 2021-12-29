@@ -1,6 +1,6 @@
 # C++ Error Reporting
 
-[![Build Status](https://github.com/exasol/error-reporting-cpp/actions/workflows/main.yml/badge.svg)](https://github.com/exasol/error-reporting-cpp)
+[![Build Status](https://github.com/exasol/error-reporting-cpp/actions/workflows/build.yaml/badge.svg)](https://github.com/exasol/error-reporting-cpp)
 [![codecov.io](https://codecov.io/github/exasol/error-reporting-cpp/coverage.svg?branch=main)](https://codecov.io/github/exasol/error-reporting-cpp?branch=main)
 
 
@@ -84,8 +84,11 @@ Result: `E-TEST-2: Not enough space on device '/dev/sda1'. Delete something from
 
 ## Important
 
-One cpp file needs to declare the preprocessor constant `MAIN_ERROR_REPORTING_CPP` **before** including the main header file `error_message.h`. 
+We recommend declaring the error-codes in one (or more) header file(s), which are then included by the cpp files which need to throw errors.
+In your main cpp file you need to declare the preprocessor constant `MAIN_ERROR_REPORTING_CPP` **before** including the error-code header file(s). 
+
 Background: The global variables will be declared in this cpp file.
+
 
 ## Error code collection
 
@@ -103,3 +106,4 @@ Result: `[{ "code": "EC_TEST_1", "message": "Something went wrong.", "parameters
 ## Additional Resources
 
 * [Changelog](doc/changes/changelog.md)
+* [Doxygen docu](https://exasol.github.io/error-reporting-cpp)

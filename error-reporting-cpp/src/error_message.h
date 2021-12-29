@@ -7,7 +7,8 @@
  *
  * Include this file in your project to use the error-reporting-cpp macros.
  *
- * \note Declare \link MAIN_ERROR_REPORTING_CPP \b before including this file in your project in exactly one cpp file. This is where the global variables will be stored.
+ * @note Declare @link MAIN_ERROR_REPORTING_CPP  @endlink @b before including this file in your project in exactly one cpp file. This is where the global variables will be stored.
+ * @note Declare @link ERROR_MESSAGE_COLLECTION @endlink @b before including this file in your project in any cpp file, if you want to support collection of all error codes (@see error_message_declaration_container::collect_error_messages_as_json())
  */
 
 
