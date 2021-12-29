@@ -16,9 +16,11 @@
 namespace error_reporting {
 
     /**
+     * @internal
      * @brief Helper class to check invocation of all parameters of a error-code builder class.
      * @tparam num_parameters
      * @tparam current_flags
+     * @endinternal
      */
     template<int num_parameters, int current_flags = 0>
             class ErrorBuilderParameterChecker {
@@ -33,8 +35,9 @@ namespace error_reporting {
             };
 
     /**
+     * @internal
      * Helper function to replace one argument placeholder with it's actual value.
-     * @tparam T type of the value. Needs to be compatible with \see std::stringstream.
+     * @tparam T type of the value. Needs to be compatible with, see std::stringstream.
      * @param message Message containing the placeholder.
      * @param parameter_name Name of the parameter
      * @param value Value to be replaced.
@@ -42,6 +45,7 @@ namespace error_reporting {
      *
      * For example, this function replaces the input message "Not enough space on device {{Device}}." with
      * "Not enough space on device '/dev/sda1', if the parameter_name is "Device" and the value is "/dev/sda1".
+     * @endinternal
      */
     template<typename T>
     inline std::string replace_error_parameter(const std::string message, const std::string parameter_name, T value) {
@@ -121,7 +125,7 @@ PARAM_DESCR_FUNCTION1, PARAM_DESCR_FUNCTION1)(__VA_ARGS__))
 /**
  * @internal
  * Helper macro to declare the set function for one parameter.
- * It use the @see replace_error_parameter() function to replace the current parameter and returns
+ * It uses the error_reporting::replace_error_parameter() function to replace the current parameter and returns
  * an object of type parameter_check::NextBuilder. Thus we ensure that all parameter must be set before
  * the invocation of str() is allowed.
  * @endinternal
@@ -235,7 +239,7 @@ PARAM_CHECKER_FUNCTION1, PARAM_CHECKER_FUNCTION1)(EM, MITIG, __VA_ARGS__))
  * @internal
  * Helper macro to declare class for error-code builder, which repalces incrementally the parameters with it's actual values.
  * If all parameters are set, the function str() can be called to get final error string.
- * This is achieved by using template class @see parameter_check which contains a bitset for all parameters.
+ * This is achieved by using template parameter parameter_check which contains a bitset for all parameters.
  * Only if all bits are set the check std::conditional<> will return a std::string, and not a void.
  * @endinternal
  */
