@@ -4,3 +4,6 @@
 /bazel-error-reporting-cpp
 /.clwb
 /.idea
+/html
+/latex
+

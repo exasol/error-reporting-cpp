@@ -7,6 +7,19 @@
 #include <utility>
 #include <string_view>
 
+/** @file
+ * @brief Internal header file for Exasol error-reporting-cpp
+ *
+ * Includes classes and macros used to store the internal linked list of error codes.
+ *
+ */
+
+
+/**
+ * @brief Global error reporting namespace.
+ *
+ * Used to encapsulate error reporting classes.
+ */
 namespace error_reporting {
 
     struct error_message_declaration_internal {
