@@ -83,13 +83,13 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Internal struct, representing a node of the internal linked list of error code messages.  <a href="structerror__reporting_1_1error__message__declaration__internal.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classerror__reporting_1_1ErrorBuilderParameterChecker.html">ErrorBuilderParameterChecker</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper class to check invocation of all parameters of a error-code builder class.  <a href="classerror__reporting_1_1ErrorBuilderParameterChecker.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a5dc352ee59c03357a2974d6637a9c2f2"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a5dc352ee59c03357a2974d6637a9c2f2"><td class="memTemplItemLeft" align="right" valign="top">std::string&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceerror__reporting.html#a5dc352ee59c03357a2974d6637a9c2f2">replace_error_parameter</a> (const std::string message, const std::string parameter_name, T value)</td></tr>
+<tr class="memitem:a5dc352ee59c03357a2974d6637a9c2f2"><td class="memTemplParams" colspan="2"><a id="a5dc352ee59c03357a2974d6637a9c2f2" name="a5dc352ee59c03357a2974d6637a9c2f2"></a>
+template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a5dc352ee59c03357a2974d6637a9c2f2"><td class="memTemplItemLeft" align="right" valign="top">std::string&#160;</td><td class="memTemplItemRight" valign="bottom"><b>replace_error_parameter</b> (const std::string message, const std::string parameter_name, T value)</td></tr>
 <tr class="separator:a5dc352ee59c03357a2974d6637a9c2f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
@@ -101,69 +101,7 @@ Variables</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Global error reporting namespace. </p>
 <p >Used to encapsulate error reporting classes. </p>
-</div><h2 class="groupheader">Function Documentation</h2>
-<a id="a5dc352ee59c03357a2974d6637a9c2f2" name="a5dc352ee59c03357a2974d6637a9c2f2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5dc352ee59c03357a2974d6637a9c2f2">&#9670;&nbsp;</a></span>replace_error_parameter()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::string error_reporting::replace_error_parameter </td>
-          <td>(</td>
-          <td class="paramtype">const std::string&#160;</td>
-          <td class="paramname"><em>message</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::string&#160;</td>
-          <td class="paramname"><em>parameter_name</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">T&#160;</td>
-          <td class="paramname"><em>value</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p >Helper function to replace one argument placeholder with it's actual value. </p><dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td>type of the value. Needs to be compatible with </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section see"><dt>See also</dt><dd>std::stringstream. </dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">message</td><td>Message containing the placeholder. </td></tr>
-    <tr><td class="paramname">parameter_name</td><td>Name of the parameter </td></tr>
-    <tr><td class="paramname">value</td><td>Value to be replaced. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>A string containing the replace.</dd></dl>
-<p>For example, this function replaces the input message "Not enough space on device {{Device}}." with "Not enough space on device '/dev/sda1', if the parameter_name is "Device" and the value is "/dev/sda1". </p>
-
-</div>
-</div>
-</div><!-- contents -->
+</div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2
