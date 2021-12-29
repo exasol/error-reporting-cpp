@@ -1,6 +1,6 @@
 <map id="error&#45;reporting&#45;cpp/src/error_message_internal.h" name="error&#45;reporting&#45;cpp/src/error_message_internal.h">
 <area shape="rect" id="node1" title="Internal header file for Exasol error&#45;reporting&#45;cpp." alt="" coords="78,5,271,47"/>
-<area shape="rect" id="node2" href="$error__message__no__param_8h_source.html" title=" " alt="" coords="5,95,160,151"/>
-<area shape="rect" id="node4" href="$error__message__with__param_8h_source.html" title=" " alt="" coords="184,95,349,151"/>
+<area shape="rect" id="node2" href="$error__message__no__param_8h.html" title="Internal header file for Exasol error&#45;reporting&#45;cpp which implements generation of error&#45;code classes..." alt="" coords="5,95,160,151"/>
+<area shape="rect" id="node4" href="$error__message__with__param_8h.html" title="Internal header file for Exasol error&#45;reporting&#45;cpp which implements generation of error&#45;code classes..." alt="" coords="184,95,349,151"/>
 <area shape="rect" id="node3" href="$error__message_8h.html" title="Main header file for Exasol error&#45;reporting&#45;cpp." alt="" coords="103,199,247,240"/>
 </map>

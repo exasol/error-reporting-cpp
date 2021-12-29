@@ -74,12 +74,17 @@ $(function() {
   <div class="headertitle"><div class="title">error_reporting::error_message_declaration_internal Struct Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Internal struct, representing a node of the internal linked list of error code messages.  
+ <a href="structerror__reporting_1_1error__message__declaration__internal.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="error__message__internal_8h_source.html">error_message_internal.h</a>&gt;</code></p>
 <div class="dynheader">
 Collaboration diagram for error_reporting::error_message_declaration_internal:</div>
 <div class="dyncontent">
 <div class="center"><img src="structerror__reporting_1_1error__message__declaration__internal__coll__graph.png" border="0" usemap="#aerror__reporting_1_1error__message__declaration__internal_coll__map" alt="Collaboration graph"/></div>
 <map name="aerror__reporting_1_1error__message__declaration__internal_coll__map" id="aerror__reporting_1_1error__message__declaration__internal_coll__map">
-<area shape="rect" title=" " alt="" coords="5,5,207,47"/>
+<area shape="rect" title="Internal struct, representing a node of the internal linked list of error code messages." alt="" coords="5,5,207,47"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -87,7 +92,11 @@ Collaboration diagram for error_reporting::error_message_declaration_internal:</
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ad51852b2dc5038bc32d0b3e80b52188c"><td class="memItemLeft" align="right" valign="top"><a id="ad51852b2dc5038bc32d0b3e80b52188c" name="ad51852b2dc5038bc32d0b3e80b52188c"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>error_message_declaration_internal</b> (const std::string_view &amp;_error_code, const std::string_view &amp;_error_message, const std::string_view &amp;_error_mitigations, size_t _nr_parameters, const char *const *_parameters)</td></tr>
+<tr class="memdesc:ad51852b2dc5038bc32d0b3e80b52188c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor. <br /></td></tr>
 <tr class="separator:ad51852b2dc5038bc32d0b3e80b52188c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7459654cecc842202cdd5824aee4ba59"><td class="memItemLeft" align="right" valign="top"><a id="a7459654cecc842202cdd5824aee4ba59" name="a7459654cecc842202cdd5824aee4ba59"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><b>str</b> ()</td></tr>
+<tr class="separator:a7459654cecc842202cdd5824aee4ba59"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -110,7 +119,10 @@ const char *const  *&#160;</td><td class="memItemRight" valign="bottom"><b>param
 <a class="el" href="structerror__reporting_1_1error__message__declaration__internal.html">error_message_declaration_internal</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>next</b></td></tr>
 <tr class="separator:ada11983b067adf9d4f61d1ea5d9d51be"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<hr/>The documentation for this struct was generated from the following file:<ul>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p >Internal struct, representing a node of the internal linked list of error code messages. </p>
+<p >Contains all information for a particular error code, which are required to build the error collection JSON. Also contains a pointer to the next element of the linked list. </p>
+</div><hr/>The documentation for this struct was generated from the following file:<ul>
 <li>error-reporting-cpp/src/<a class="el" href="error__message__internal_8h_source.html">error_message_internal.h</a></li>
 </ul>
 </div><!-- contents -->

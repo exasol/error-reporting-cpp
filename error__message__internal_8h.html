@@ -100,8 +100,8 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="center"><img src="error__message__internal_8h__dep__incl.png" border="0" usemap="#aerror-reporting-cpp_2src_2error__message__internal_8hdep" alt=""/></div>
 <map name="aerror-reporting-cpp_2src_2error__message__internal_8hdep" id="aerror-reporting-cpp_2src_2error__message__internal_8hdep">
 <area shape="rect" title="Internal header file for Exasol error&#45;reporting&#45;cpp." alt="" coords="78,5,271,47"/>
-<area shape="rect" href="error__message__no__param_8h_source.html" title=" " alt="" coords="5,95,160,151"/>
-<area shape="rect" href="error__message__with__param_8h_source.html" title=" " alt="" coords="184,95,349,151"/>
+<area shape="rect" href="error__message__no__param_8h.html" title="Internal header file for Exasol error&#45;reporting&#45;cpp which implements generation of error&#45;code classes..." alt="" coords="5,95,160,151"/>
+<area shape="rect" href="error__message__with__param_8h.html" title="Internal header file for Exasol error&#45;reporting&#45;cpp which implements generation of error&#45;code classes..." alt="" coords="184,95,349,151"/>
 <area shape="rect" href="error__message_8h.html" title="Main header file for Exasol error&#45;reporting&#45;cpp." alt="" coords="103,199,247,240"/>
 </map>
 </div>
@@ -111,8 +111,10 @@ This graph shows which files directly or indirectly include this file:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structerror__reporting_1_1error__message__declaration__internal.html">error_reporting::error_message_declaration_internal</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Internal struct, representing a node of the internal linked list of error code messages.  <a href="structerror__reporting_1_1error__message__declaration__internal.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classerror__reporting_1_1error__message__declaration__container.html">error_reporting::error_message_declaration_container</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global error reporting container.  <a href="classerror__reporting_1_1error__message__declaration__container.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
@@ -138,11 +140,8 @@ Macros</h2></td></tr>
 <tr class="memitem:adc9725f5c054a3eef8b68bc6f3c085b3"><td class="memItemLeft" align="right" valign="top"><a id="adc9725f5c054a3eef8b68bc6f3c085b3" name="adc9725f5c054a3eef8b68bc6f3c085b3"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>MACRO_CHOOSER</b>(FUNC, ...)&#160;&#160;&#160;CHOOSE_FROM_ARG_COUNT(FUNC, NO_ARG_EXPANDER __VA_ARGS__ (FUNC))</td></tr>
 <tr class="separator:adc9725f5c054a3eef8b68bc6f3c085b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a86f3648bff6bb37438d4f6e513aed859"><td class="memItemLeft" align="right" valign="top"><a id="a86f3648bff6bb37438d4f6e513aed859" name="a86f3648bff6bb37438d4f6e513aed859"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>GET_MITIGATIONS_MACRO</b>(_1,  NAME, ...)&#160;&#160;&#160;NAME</td></tr>
-<tr class="separator:a86f3648bff6bb37438d4f6e513aed859"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7f5717c62d78197d9ab66546d6ff5abd"><td class="memItemLeft" align="right" valign="top"><a id="a7f5717c62d78197d9ab66546d6ff5abd" name="a7f5717c62d78197d9ab66546d6ff5abd"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>MITIGATIONS</b>(...)&#160;&#160;&#160;MACRO_CHOOSER(MITIGATIONS, __VA_ARGS__)(__VA_ARGS__)</td></tr>
+<tr class="memitem:a7f5717c62d78197d9ab66546d6ff5abd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="error__message__internal_8h.html#a7f5717c62d78197d9ab66546d6ff5abd">MITIGATIONS</a>(...)&#160;&#160;&#160;MACRO_CHOOSER(MITIGATIONS, __VA_ARGS__)(__VA_ARGS__)</td></tr>
+<tr class="memdesc:a7f5717c62d78197d9ab66546d6ff5abd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Macro to declare one or zero mitigations.  <a href="error__message__internal_8h.html#a7f5717c62d78197d9ab66546d6ff5abd">More...</a><br /></td></tr>
 <tr class="separator:a7f5717c62d78197d9ab66546d6ff5abd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad4f7ac026c3e79a347ddc7324bc796cc"><td class="memItemLeft" align="right" valign="top"><a id="ad4f7ac026c3e79a347ddc7324bc796cc" name="ad4f7ac026c3e79a347ddc7324bc796cc"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>MITIGATIONS_1</b>(x)&#160;&#160;&#160;static constexpr std::string_view  mitigations_str = (x);</td></tr>
@@ -163,7 +162,31 @@ error_message_declaration_container&#160;</td><td class="memItemRight" valign="b
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Internal header file for Exasol error-reporting-cpp. </p>
 <p >Includes classes and macros used to store the internal linked list of error codes. </p>
-</div></div><!-- contents -->
+</div><h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a7f5717c62d78197d9ab66546d6ff5abd" name="a7f5717c62d78197d9ab66546d6ff5abd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f5717c62d78197d9ab66546d6ff5abd">&#9670;&nbsp;</a></span>MITIGATIONS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MITIGATIONS</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>...</em></td><td>)</td>
+          <td>&#160;&#160;&#160;MACRO_CHOOSER(MITIGATIONS, __VA_ARGS__)(__VA_ARGS__)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Macro to declare one or zero mitigations. </p>
+<p >The mitigation argument must be a string. It might contain parameter placeholders, for example: </p><div class="fragment"><div class="line">MITIGATION(<span class="stringliteral">&quot;Delete something from {{Device}}.&quot;</span>)</div>
+</div><!-- fragment --><p >If there is more than one mitigation, you can separate them by linebreak.</p>
+<p >You can skip the parameter if there are no mitigations: </p><div class="fragment"><div class="line">MITIGATION()</div>
+</div><!-- fragment --> 
+</div>
+</div>
+</div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2

@@ -73,16 +73,61 @@ $(function() {
   <div class="headertitle"><div class="title">error_reporting::error_message_declaration_container Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Global error reporting container.  
+ <a href="classerror__reporting_1_1error__message__declaration__container.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="error__message__internal_8h_source.html">error_message_internal.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:aa59579a566e5541ceff3d351c9420fd3"><td class="memItemLeft" align="right" valign="top"><a id="aa59579a566e5541ceff3d351c9420fd3" name="aa59579a566e5541ceff3d351c9420fd3"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>error_message_declaration_container</b> ()</td></tr>
+<tr class="memdesc:aa59579a566e5541ceff3d351c9420fd3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor. <br /></td></tr>
+<tr class="separator:aa59579a566e5541ceff3d351c9420fd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac792a88f50a68d579fd841630a8d64ee"><td class="memItemLeft" align="right" valign="top"><a id="ac792a88f50a68d579fd841630a8d64ee" name="ac792a88f50a68d579fd841630a8d64ee"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>register_error_message</b> (<a class="el" href="structerror__reporting_1_1error__message__declaration__internal.html">error_message_declaration_internal</a> *msg)</td></tr>
+<tr class="memdesc:ac792a88f50a68d579fd841630a8d64ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a new node to the internal linked list of error-codes. <br /></td></tr>
 <tr class="separator:ac792a88f50a68d579fd841630a8d64ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a169962b5950793eb962e50115248e117"><td class="memItemLeft" align="right" valign="top"><a id="a169962b5950793eb962e50115248e117" name="a169962b5950793eb962e50115248e117"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>collect_error_messages_as_json</b> ()</td></tr>
+<tr class="memitem:a169962b5950793eb962e50115248e117"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classerror__reporting_1_1error__message__declaration__container.html#a169962b5950793eb962e50115248e117">collect_error_messages_as_json</a> ()</td></tr>
+<tr class="memdesc:a169962b5950793eb962e50115248e117"><td class="mdescLeft">&#160;</td><td class="mdescRight">Collects all elements in the list as JSON object.  <a href="classerror__reporting_1_1error__message__declaration__container.html#a169962b5950793eb962e50115248e117">More...</a><br /></td></tr>
 <tr class="separator:a169962b5950793eb962e50115248e117"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p >Global error reporting container. </p>
+<p >Contains the root node of the internal error code linked list, which is used to build the error collection JSON. Defines a method to build the JSON from the internal linked list, </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="classerror__reporting_1_1error__message__declaration__container.html#a169962b5950793eb962e50115248e117" title="Collects all elements in the list as JSON object.">error_message_declaration_container::collect_error_messages_as_json()</a> </dd></dl>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a169962b5950793eb962e50115248e117" name="a169962b5950793eb962e50115248e117"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a169962b5950793eb962e50115248e117">&#9670;&nbsp;</a></span>collect_error_messages_as_json()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string error_reporting::error_message_declaration_container::collect_error_messages_as_json </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Collects all elements in the list as JSON object. </p>
+<dl class="section return"><dt>Returns</dt><dd>A string containing all registered error-codes in the following format: <div class="fragment"><div class="line">[{ &quot;code&quot;: &quot;EC_1&quot; ,  &quot;message&quot;: &quot;Error Message 1&quot;,</div>
+<div class="line">   &quot;parameters&quot; : [&quot;Description of Parameter1&quot;, &quot;Description of Parameter2&quot;],</div>
+<div class="line">   &quot;mitigations&quot; : &quot;Mitigations&quot;}]</div>
+</div><!-- fragment --> </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>error-reporting-cpp/src/<a class="el" href="error__message__internal_8h_source.html">error_message_internal.h</a></li>
 </ul>
