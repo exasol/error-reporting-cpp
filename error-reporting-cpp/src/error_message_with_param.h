@@ -134,7 +134,7 @@ PARAM_DESCR_FUNCTION1, PARAM_DESCR_FUNCTION1)(__VA_ARGS__))
 using PARAM_##INDEX##_NEXTBUILDER = typename parameter_check::template NextBuilder<INDEX>; \
 template<typename T>                                                           \
 EC##_builder<PARAM_##INDEX##_NEXTBUILDER> set##KEY(const T & param) { \
-const std::string new_message = error_reporting::replace_error_parameter(message, #KEY, param ); \
+const std::string new_message = ::error_reporting::replace_error_parameter(message, #KEY, param ); \
 return EC##_builder<PARAM_##INDEX##_NEXTBUILDER>(new_message); \
 }                                         \
 
@@ -269,7 +269,7 @@ return message;                                                                 
  * @endinternal
  */
 #define DECLARE_ERROR_BUILDER_CLASS(EC, EM, MITIG, ...)                                             \
-class EC##_class : protected error_message_declaration_internal {                                   \
+class EC##_class : protected ::error_reporting::error_message_declaration_internal {                \
 public:                                                                                             \
 static constexpr std::string_view  error_code_str = #EC;                                            \
 static constexpr std::string_view  message_str = EM;                                                \
@@ -282,7 +282,7 @@ PARAM_CHECKER_FUNCTIONS(message_str, mitigations_str, __VA_ARGS__);             
 }                                                                                                   \
                                                                                                     \
 using ErrorBuilder_t =                                                                              \
-EC##_builder<error_reporting::ErrorBuilderParameterChecker<num_parameter, 0>>;                      \
+EC##_builder<::error_reporting::ErrorBuilderParameterChecker<num_parameter, 0>>;                    \
 ErrorBuilder_t build() {                                                                            \
     return ErrorBuilder_t(str());                                                                   \
 }                                                                                                   \

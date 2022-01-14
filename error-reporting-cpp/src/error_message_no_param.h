@@ -18,7 +18,7 @@
  * @endinternal
  */
 #define DECLARE_ERROR_BUILDER_CLASS_NO_PARAM(EC, EM, MITIG)                                         \
-class EC##_class : public error_message_declaration_internal {                                      \
+class EC##_class : public ::error_reporting::error_message_declaration_internal {                   \
 public:                                                                                             \
 static constexpr std::string_view  error_code_str = #EC;                                            \
 static constexpr std::string_view  message_str = EM;                                                \

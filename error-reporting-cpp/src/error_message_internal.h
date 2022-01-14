@@ -34,14 +34,14 @@ namespace error_reporting {
                 const std::string_view & _error_message,
                 const std::string_view & _error_mitigations,
                 size_t _nr_parameters,
-                const char* const* _parameters);
+                const char* const* const _parameters);
 
         std::string str();
         const std::string_view & error_code;
         const std::string_view & error_message;
         const std::string_view & error_mitigations;
         const size_t nr_parameters;
-        const char * const * parameters;
+        const char * const * const parameters;
         error_message_declaration_internal * next;
     };
 
@@ -117,7 +117,7 @@ namespace error_reporting {
             const std::string_view & _error_message,
             const std::string_view & _error_mitigations,
             size_t _nr_parameters,
-            const char* const * _parameters) :
+            const char* const * const _parameters) :
             error_code(_error_code),
             error_message(_error_message),
             error_mitigations(_error_mitigations),

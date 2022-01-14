@@ -93,6 +93,7 @@ Background: The global variables will be declared in this cpp file.
 ## Error code collection
 
 If you want to enable the error code collection (for example in a separate executable), you also need to declare the preprocessor constant `ERROR_MESSAGE_COLLECTION` **before** including the main header file `error_message.h`.
+In case you use a separate executable for error code collection, you should add `ERROR_MESSAGE_COLLECTION` as a compiler flag: `-DERROR_MESSAGE_COLLECTION`.
 
 The you can retrieve a JSON string containing the definition of all error codes, used in the particular executable:
 ```c++
