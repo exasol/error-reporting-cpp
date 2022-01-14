@@ -338,7 +338,7 @@ template&lt;typename T &gt; </td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line"><span class="keyword">class </span>EC##_class : <span class="keyword">protected</span> error_message_declaration_internal {                                   \</div>
+<b>Value:</b><div class="fragment"><div class="line"><span class="keyword">class </span>EC##_class : <span class="keyword">protected</span> <a class="code hl_struct" href="structerror__reporting_1_1error__message__declaration__internal.html">::error_reporting::error_message_declaration_internal</a> {                \</div>
 <div class="line">public:                                                                                             \</div>
 <div class="line">static <span class="keyword">constexpr</span> std::string_view  error_code_str = #EC;                                            \</div>
 <div class="line">static <span class="keyword">constexpr</span> std::string_view  message_str = EM;                                                \</div>
@@ -351,11 +351,12 @@ template&lt;typename T &gt; </td></tr>
 <div class="line">}                                                                                                   \</div>
 <div class="line">                                                                                                    \</div>
 <div class="line">using ErrorBuilder_t =                                                                              \</div>
-<div class="line">EC##_builder&lt;error_reporting::ErrorBuilderParameterChecker&lt;num_parameter, 0&gt;&gt;;                      \</div>
+<div class="line">EC##_builder&lt;::error_reporting::ErrorBuilderParameterChecker&lt;num_parameter, 0&gt;&gt;;                    \</div>
 <div class="line">ErrorBuilder_t build() {                                                                            \</div>
 <div class="line">    return ErrorBuilder_t(str());                                                                   \</div>
 <div class="line">}                                                                                                   \</div>
 <div class="line">};                                                                                                  \</div>
+<div class="ttc" id="astructerror__reporting_1_1error__message__declaration__internal_html"><div class="ttname"><a href="structerror__reporting_1_1error__message__declaration__internal.html">error_reporting::error_message_declaration_internal</a></div><div class="ttdoc">Internal struct, representing a node of the internal linked list of error code messages.</div><div class="ttdef"><b>Definition:</b> error_message_internal.h:31</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -492,7 +493,7 @@ template&lt;typename T &gt; </td></tr>
 <b>Value:</b><div class="fragment"><div class="line"><span class="keyword">using</span> PARAM_##INDEX##_NEXTBUILDER = <span class="keyword">typename</span> parameter_check::template NextBuilder&lt;INDEX&gt;; \</div>
 <div class="line">template&lt;typename T&gt;                                                           \</div>
 <div class="line">EC##_builder&lt;PARAM_##INDEX##_NEXTBUILDER&gt; set##KEY(<span class="keyword">const</span> T &amp; param) { \</div>
-<div class="line">const std::string new_message = error_reporting::replace_error_parameter(message, #KEY, param ); \</div>
+<div class="line">const std::string new_message = ::error_reporting::replace_error_parameter(message, #KEY, param ); \</div>
 <div class="line">return EC##_builder&lt;PARAM_##INDEX##_NEXTBUILDER&gt;(new_message); \</div>
 <div class="line">}                                         \</div>
 </div><!-- fragment -->
