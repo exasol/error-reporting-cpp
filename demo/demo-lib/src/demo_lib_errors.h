@@ -5,7 +5,7 @@
 
 namespace demo_errors {
 
-    DECLARE_ERR_MSG(DEMO_1, "Division by zero. Value {{VALUE}} is invalid.",MITIGATIONS());
+    DECLARE_ERR_MSG(DEMO_1, "Division by zero.",MITIGATIONS());
 
     DECLARE_ERR_MSG_PARAMS(DEMO_2, "Parameter {{FUNC_PARAM}} out of range. Value {{VALUE}} is invalid.",
                            MITIGATIONS("Change {{FUNC_PARAM}}"), PARAM("Parameter for division", FUNC_PARAM), PARAM("Value of parameter for division", VALUE));
