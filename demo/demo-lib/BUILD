@@ -1,16 +1,5 @@
 load("@rules_cc//cc:defs.bzl", "cc_library")
+load(":defs.bzl", "demo_lib")
 
-cc_library(
-    name = "demo-lib",
-    srcs = ["src/demo_lib.h", "src/demo_lib_errors.h", "src/demo_lib_errors.cc", "src/demo_lib.cc"],
-    visibility = ["//visibility:public"],
-    deps=["//error-reporting-cpp:error-reporting-cpp"]
-)
-
-cc_library(
-    name = "demo-lib-with-collection",
-    srcs = ["src/demo_lib.h", "src/demo_lib_errors.h", "src/demo_lib_errors.cc", "src/demo_lib.cc"],
-    visibility = ["//visibility:public"],
-    deps=["//error-reporting-cpp:error-reporting-cpp"],
-    defines= ["ERROR_MESSAGE_COLLECTION"]
-)
+demo_lib(name="demo-lib", defines=[])
+demo_lib(name="demo-lib-with-collection", defines=["ERROR_MESSAGE_COLLECTION"])
