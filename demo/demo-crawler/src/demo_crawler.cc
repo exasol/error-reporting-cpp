@@ -1,4 +1,6 @@
+#define MAIN_ERROR_REPORTING_CPP
 #include "error-reporting-cpp/src/error_message.h"
+
 #include <iostream>
 
 int main(int argc, char* argv[]) {

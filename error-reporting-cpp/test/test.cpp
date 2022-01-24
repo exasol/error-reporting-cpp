@@ -1,5 +1,4 @@
-
-//Note that we do not Declare the main constant here -> The global objects are declared in another .o file
+//Note that we do not Declare the main constant here -> The global variables are declared in another .o file
 #include "test_error_messages.h"
 
 #include "include/gtest/gtest.h"

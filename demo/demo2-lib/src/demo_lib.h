@@ -1,0 +1,7 @@
+#ifndef ERROR_REPORTING_CPP_DEMO2_LIB_H
+#define ERROR_REPORTING_CPP_DEMO2_LIB_H
+
+
+double my_log(double a);
+
+#endif //ERROR_REPORTING_CPP_DEMO2_LIB_H

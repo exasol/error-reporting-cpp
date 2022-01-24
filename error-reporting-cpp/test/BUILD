@@ -16,5 +16,5 @@ cc_test(
         "//error-reporting-cpp",
         "@googletest//:gtest_main",
     ],
-    defines = ["ERROR_MESSAGE_COLLECTION"]
+    defines = ["ERROR_MESSAGE_COLLECTION"],
 )

@@ -208,7 +208,7 @@ static constexpr std::string_view  mitigations_str = (x);
 static constexpr std::string_view  mitigations_str = "";
 
 
-#ifdef MAIN_ERROR_REPORTING_CPP
+#ifdef CREATE_ERROR_MESSAGE_CLASS_INSTANCES
 #define ERROR_MESSAGE_CLASS_INSTANCE_MODIFIER
 #else
 #define ERROR_MESSAGE_CLASS_INSTANCE_MODIFIER extern

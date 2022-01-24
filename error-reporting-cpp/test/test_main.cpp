@@ -1,4 +1,4 @@
-
+#define CREATE_ERROR_MESSAGE_CLASS_INSTANCES
 #define MAIN_ERROR_REPORTING_CPP
 #include "test_error_messages.h"
 #include "include/gtest/gtest.h"
