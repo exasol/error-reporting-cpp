@@ -1,6 +1,6 @@
 #define MAIN_ERROR_REPORTING_CPP
-#include "demo/demo1-lib/src/demo_lib.h"
-#include "demo/demo2-lib/src/demo_lib.h"
+#include "demo/macro/demo1-lib/src/demo_lib.h"
+#include "demo/macro/demo2-lib/src/demo_lib.h"
 #include <iostream>
 
 int main(int argc, char* argv[]) {

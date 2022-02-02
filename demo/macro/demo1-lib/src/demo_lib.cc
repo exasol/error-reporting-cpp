@@ -1,5 +1,5 @@
-#include "demo/demo1-lib/src/demo_lib.h"
-#include "demo/demo1-lib/src/demo_lib_errors.h"
+#include "demo/macro/demo1-lib/src/demo_lib.h"
+#include "demo/macro/demo1-lib/src/demo_lib_errors.h"
 #include <cmath>
 
 int low_value_div(int a, int b) {

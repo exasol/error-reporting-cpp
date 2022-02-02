@@ -12,8 +12,8 @@
  */
 
 
-#include "error_message_no_param.h"
-#include "error_message_with_param.h"
+#include "error-reporting-cpp/src/macro/error_message_no_param.h"
+#include "error-reporting-cpp/src/macro/error_message_with_param.h"
 
 #endif //ERROR_REPORTING_CPP_ERROR_MESSAGE_H
 

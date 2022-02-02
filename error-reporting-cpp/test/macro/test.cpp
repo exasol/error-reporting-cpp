@@ -1,5 +1,5 @@
 //Note that we do not Declare the main constant here -> The global variables are declared in another .o file
-#include "test_error_messages.h"
+#include "error-reporting-cpp/test/macro/test_error_messages.h"
 
 #include "include/gtest/gtest.h"
 #include <string>

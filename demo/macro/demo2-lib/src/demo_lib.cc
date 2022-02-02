@@ -1,5 +1,5 @@
-#include "demo/demo2-lib/src/demo_lib.h"
-#include "demo/demo2-lib/src/demo_lib_errors.h"
+#include "demo/macro/demo2-lib/src/demo_lib.h"
+#include "demo/macro/demo2-lib/src/demo_lib_errors.h"
 #include <math.h>
 
 double my_log(double a) {

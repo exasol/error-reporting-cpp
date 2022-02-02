@@ -1,7 +1,7 @@
 #ifndef ERROR_REPORTING_CPP_ERROR_MESSAGE_WITH_PARAM_H
 #define ERROR_REPORTING_CPP_ERROR_MESSAGE_WITH_PARAM_H
 
-#include "error_message_internal.h"
+#include "error-reporting-cpp/src/macro/error_message_internal.h"
 
 /** @file
  * @brief Internal header file for Exasol error-reporting-cpp which implements generation of error-code classes with parameters.

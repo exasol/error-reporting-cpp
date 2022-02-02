@@ -1,5 +1,5 @@
 #define MAIN_ERROR_REPORTING_CPP
-#include "error-reporting-cpp/src/error_message.h"
+#include "error-reporting-cpp/src/macro/error_message.h"
 
 #include <iostream>
 

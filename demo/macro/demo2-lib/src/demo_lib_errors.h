@@ -1,7 +1,7 @@
 #ifndef ERROR_REPORTING_CPP_DEMO2_LIB_ERRORS_H
 #define ERROR_REPORTING_CPP_DEMO2_LIB_ERRORS_H
 
-#include "error-reporting-cpp/src/error_message.h"
+#include "error-reporting-cpp/src/macro/error_message.h"
 
 namespace demo2_errors {
 

@@ -5,7 +5,7 @@ cc_binary(
     srcs = ["src/demo_exe.cc"],
     visibility = ["//visibility:public"],
     deps= [
-        "//demo/demo1-lib",
-        "//demo/demo2-lib"
+        "//demo/macro/demo1-lib",
+        "//demo/macro/demo2-lib"
     ]
 )
