@@ -6,3 +6,10 @@ cc_library(
             "src/macro/error_message_no_param.h", "src/macro/error_message_with_param.h"],
     visibility = ["//visibility:public"],
 )
+
+cc_library(
+    name = "error-reporting-cpp-template",
+    hdrs = ["src/template/error_message.h", "src/template/error_message_internal.h",
+            "src/template/error_message_param.h"],
+    visibility = ["//visibility:public"],
+)
