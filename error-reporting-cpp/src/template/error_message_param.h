@@ -91,9 +91,9 @@ namespace error_reporting {
 }
 
 #ifdef CREATE_ERROR_MESSAGE_CLASS_INSTANCES
-#define CREATE_ERROR_MSG(cls, code, initializer) cls code initializer;
+#define ERROR_MSG_PREFIX
 #else
-#define CREATE_ERROR_MSG(cls, code, initializer) extern cls code;
+#define ERROR_MSG_PREFIX extern
 #endif
 
 

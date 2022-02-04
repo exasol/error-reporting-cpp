@@ -3,6 +3,10 @@
 
 #include "error-reporting-cpp/src/template/error_message.h"
 
+struct EC_DB_1_class : error_reporting::SimpleError {
+    EC_DB_1_class() : error_reporting::SimpleError("EC_DB_1", "Out of memory.", {"Buy more RAM"})
+    {}
+};
 
 struct ParamDummy1 {
     struct Desc : error_reporting::ParamDesc {
@@ -22,16 +26,19 @@ struct ParamDummy2{
     ParamDummy2(int value):value(value){};
 };
 
-class EC_DB_2_cls : public error_reporting::BaseError<ParamDummy1, ParamDummy2>{
-public:
-    EC_DB_2_cls(std::string code, std::string message, const std::vector<std::string> & mitigations)
-        :BaseError(code, message, mitigations) {};
+struct EC_DB_2_cls : error_reporting::BaseError<ParamDummy1, ParamDummy2>{
+    EC_DB_2_cls() :
+    error_reporting::BaseError<ParamDummy1, ParamDummy2>("EC_DB_2",  "hd error {{Dummy1}} , {{Dummy2}}.", {"Replace {{Dummy1}}"}) {}
 };
 
+struct EC_DB_3_class : error_reporting::SimpleError {
+    EC_DB_3_class() : error_reporting::SimpleError("EC_DB_3",  "Kernel panic", {})
+    {}
+};
 
-CREATE_ERROR_MSG(error_reporting::SimpleError, EC_DB_1, ( "EC_DB_1", "Out of memory.", {"Buy more RAM"}))
-CREATE_ERROR_MSG(EC_DB_2_cls,  EC_DB_2, ("EC_DB_2",  "hd error {{Dummy1}} , {{Dummy2}}.", {"Replace {{Dummy1}}"}))
-CREATE_ERROR_MSG(error_reporting::SimpleError,  EC_DB_3, ("EC_DB_3",  "Kernel panic", {}))
+ERROR_MSG_PREFIX EC_DB_1_class EC_DB_1;
+ERROR_MSG_PREFIX EC_DB_2_cls EC_DB_2;
+ERROR_MSG_PREFIX EC_DB_3_class EC_DB_3;
 
 
 #endif //ERROR_REPORTING_CPP_TEST_ERROR_MESSAGES_H
