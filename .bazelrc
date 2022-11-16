@@ -1,0 +1,3 @@
+build --cxxopt='-std=c++17'
+build:verbose --copt='-v' --subcommands --verbose_failures --announce_rc
+build --sandbox_debug --config=verbose

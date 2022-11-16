@@ -1,0 +1,9 @@
+/bazel-bin
+/bazel-out
+/bazel-testlogs
+/bazel-error-reporting-cpp
+/.clwb
+/.idea
+/html
+/latex
+
